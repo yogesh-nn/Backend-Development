@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main h-screen bg-zinc-900">
+      <div class="createTask p-10 text-white">
+        <form action="/editFileName" method="post">
+          <input
+            class="bg-zinc-700 w-1/4 block rounded-md px-3 py-3"
+            readonly
+            type="text"
+            name="old"
+            value="<%= fileName %>"
+            placeholder=<%= fileName %>
+          />
+          <input
+            class="bg-zinc-700 w-1/4 block mt-3 rounded-md px-3 py-3"
+            type="text"
+            name="new"
+            placeholder="Enter new file name..."
+          />
+          <input
+            class="bg-yellow-700 rounded-md px-3 py-3 mt-3 text-black-700 hover:bg-sky-700"
+            type="submit"
+            value="Update Name"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
