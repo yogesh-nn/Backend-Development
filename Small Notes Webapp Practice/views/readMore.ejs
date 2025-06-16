@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main h-screen bg-zinc-900 text-white text-sm p-10">
+        <a class="text-blue-300" href="/">Go Back to Homepage...</a>
+      <h1 class="text-3xl mt-5"><%= fileName %></h1>
+      <p class="text-light mt-4">
+        <%= fileData %>
+      </p>
+    </div>
+  </body>
+</html>
