@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../public/stylesheets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <div class="Main h-dvh w-full text-white bg-zinc-900 p-6">
+    <div class="mb-10 bg-blue-600 inline-block px-2 py-1 rounded-lg">
+      <a class="text-sm" href="/">Go to Homepage</a>
+    </div>
+    <h2 class="mb-8 text-xl underline-offset-4 underline decoration-green-500 inline-block tracking-tighter px-2 py-1">
+      All User Details
+    </h2>
+    <div class="profileUsers flex flex-wrap gap-4">
+
+      <% if (readUserProfiles.length === 0) { %>
+      <h1 class="text-white text-lg">
+        No User Profile yet...!!! Please go to homepage and create one.
+      </h1>
+      <% } else { %>
+      <% readUserProfiles.forEach(element => { %>
+      <div class="userProfile bg-zinc-600 w-50 p-3 rounded-lg flex flex-col justify-between min-h-[320px]">
+        <div class="image w-full bg-zinc-500 h-40 rounded-lg">
+          <img class="w-full h-full object-cover rounded-lg" src="<%= element.imageURL %>" />
+        </div>
+        <div class="text-md text-center mt-2">
+          <p><%= element.name %></p>
+          <p class="text-xs pb-2 italic"><%= element.email %></p>
+        </div>
+        <div class="actionLinks flex justify-between mt-2">
+          <a class="tracking-tighter text-slate-300 bg-yellow-700 p-1 rounded-lg" href="/editProfile">Edit Profile</a>
+          <a class="tracking-tighter text-slate-300 bg-rose-800 p-1 rounded-lg" href="/deleteUserProfile/<%= element._id %>">Delete Profile</a>
+        </div>
+      </div>
+      <% }) %>
+      <% } %>
+    </div>
+</body>
+
+</html>
